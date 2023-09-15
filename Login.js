@@ -1,62 +1,118 @@
-// import Login from './components/Login';
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './Login.css';
 
-const Login=()=>{
-    const [action,setAction] = useState("Sign Up");
+const Login = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [contact, setContact] = useState('');
+    const [address, setAddress] = useState('');
+    const [idproof, setId] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
+
+    const handleName = (e) => {
+        setName(e.target.value);
+        setSubmitted(false);
+    };
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+        setSubmitted(false);
+    };
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+        setSubmitted(false);
+    };
+    const handleContact = (e) => {
+        setContact(e.target.value);
+        setSubmitted(false);
+    };
+    const handleAddress = (e) => {
+        setAddress(e.target.value);
+        setSubmitted(false);
+    };
+    const handleId = (e) => {
+        setId(e.target.value);
+        setSubmitted(false);
+    };
+
+    const successMessage = () => {
+        return (
+            <div
+                className="success"
+                style={{
+                    display: submitted ? '' : 'none',
+                }}>
+                <h1>User {name} successfully registered!!</h1>
+            </div>
+        );
+    };
+
+
+    const errorMessage = () => {
+        return (
+            <div
+                className="error"
+                style={{
+                    display: error ? '' : 'none',
+                }}>
+                <h1>Please enter all the fields</h1>
+            </div>
+        );
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (name === '' || email === '' || password === '' || contact === '' || address === '' || idproof === '') {
+            setError(true);
+        } else {
+            setSubmitted(true);
+            setError(false);
+        }
+    };
     return (
         <div className="container">
             <div className="header">
-               <div className="text"> {action} </div>
-               <div className="underline"></div> 
-            </div> 
-            <div className="inputs">
-            <div class="section1">
-               Name
-            <div className="input">
-                <input type="text" placeholder="Name" />
-            </div> 
-               Last Name
-                 <div className="input">
-                <input type="text" placeholder="Last Name" />
-            </div> 
-                 Email
-            <div className="input">
-                <input type="email" placeholder="Email Id" />
-            </div> 
-                Password
-            <div className="input">
-                <input type="password" placeholder="Password" />
-            </div>  
+                <div className="text"> Sign Up </div>
+                <div className="underline"></div>
             </div>
-            <div class="section2 ">
-                Retype Password
-            <div className="input">
-                <input type="password" placeholder="Retype password" />
-            </div>  
-                Contact Number
-            <div className="input">
-                <input type="tel"  placeholder="Contact Number" required />
-            </div> 
-                 Address
-            <div className="input">
-                <input type="text" placeholder="Address" />
-            </div> 
-                Id proof
-            <div className="input">
+            <div className="inputs" align = "center">
+                <form>
 
-                <input type="file" id="file" />   
-            </div>
-            </div>
-            </div>
-            <div className="forgot-password">Lost Password ? <span>Click Here!</span></div>
-            <div className="submit-container">
-              <div className={action==="Login"?"submit gray":"submit"} onClick={()=>{setAction("Sign Up")}} >Sign Up</div>
-             
+                    <label className="label">Name</label>
+                    <input onChange={handleName} className="input"
+                        value={name} type="text" />
+
+                    <label className="label">Email</label>
+                    <input onChange={handleEmail} className="input"
+                        value={email} type="email" />
+
+                    <label className="label">Password</label>
+                    <input onChange={handlePassword} className="input"
+                        value={password} type="password" />
+
+                    <label className="label">Contact</label>
+                    <input onChange={handleContact} className="input"
+                        value={contact} type="tel" />
+
+                    <label className="label">Address</label>
+                    <input onChange={handleAddress} className="input"
+                        value={address} type="text" />
+
+                    <label className="label">ID Proof</label>
+                    <input onChange={handleId} className="input"
+                        value={idproof} type="file" />
+                    <button onClick={handleSubmit} className="btn" type="submit">
+                        Submit
+                    </button>
+                </form>
             </div>
         </div>
-    )
-    
+
+    );
+
 }
 
 export default Login 

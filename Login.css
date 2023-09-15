@@ -5,8 +5,8 @@
     align-items:center;
     margin: auto ;
     margin-top: 100px;
-    height: 890px;
-    width: 700px;
+    height: 700px;
+    width: 500px;
     background:#fff ;
 }
 
@@ -32,89 +32,63 @@
     border-radius: 9px;
 }
 
-.inputs{
-    margin-top: 55px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;    
-}
 
-.input{
-    display:flex;
-    align-items: center;
-    margin: auto;
-    width: 250px;
-    height: 40px;
-    background: #eaeaea;
-    border-radius: 6px;
-}
-
-.input input{
-    height: 50px;
-    width: 300px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #797979;
-    font-size: 12px;
-}
-
-.forgot-password{
-    padding-left: 50px;
-    margin-top: 27px;
-    color: #797979;
-    font-size: 18px;
-}
-
-.forgot-password span{
-     color: red;
-     cursor: pointer;
-}
-
-.submit-container{
-    display: flex;
-    gap: 30px;
-    margin: 60px auto;
-}
-
-.submit{
+.Login{
+    text-align: center;
+    background-color:rgb(24, 231, 24);
+    }
+    
+    .label{
+    display: block;
+    font-size: larger;
+    color: black;
+    padding: 5px;
+    }
+    
+    .input{
+    font-size: larger;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    text-align-last: center;
+    }
+    .btn{
+    color: white;
+    background-color: #349DFF;
+    border-radius: 5px;
+    font-size: larger;
+    display: block;
+    padding: 5px;
+    margin: 10px auto;
+    }
+    
+    .messages{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 49px;
-    color: #fff;
-    background:#112B6F ;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.gray{
-    background: #eaeaea;
-    color: #676767;
-}
-
-.file{
-    align-items: zzzzzz;
-}
-
-.section1{
-    display:;
-    float: left;
-    gap: 20px;
-    grid-template-columns: auto auto ;
-    padding: 10px;
-}
-.section2{
-    display: ;
-    float: right;
-    gap: 20px;
-    grid-template-columns: auto auto ;
-    padding: 10px;
-}
-#file{
+    }
     
-}
-
+    .error{
+    display: block;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    }
+    
+    .success{
+    display: block;
+    background-color: lightblue;
+    color: black;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    }
+    .inputs{
+        display:flex;
+    align-items: center;
+    margin: auto;
+    width: 380px;
+    background: #eaeaea;
+    border-radius: 6px;
+    }
